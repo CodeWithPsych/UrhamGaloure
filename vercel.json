@@ -1,12 +1,55 @@
 {
-  "version": 2,
   "builds": [
-  { "src": "index.js", "use": "@vercel/node" },
-  { "src": "src", "use": "@vercel/static-build" }
-],
-"routes": [
-  { "src": "/api/(.*)", "dest": "index.js" },
-  { "src": "/create-payment-intent", "dest": "index.js" },
-  { "src": "/(.*)", "dest": "/src/$1" }
- ]
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "build/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/api/createUser", "dest": "index.js" },
+    { "src": "/api/LoginUser", "dest": "index.js" },
+    { "src": "/api/CheckUser", "dest": "index.js" },
+    { "src": "/api/resetPasswordRequest", "dest": "index.js" },
+    { "src": "/api/resetPassword", "dest": "index.js" },
+    { "src": "/api/logout", "dest": "index.js" },
+    { "src": "/api/addBrand", "dest": "index.js" },
+    { "src": "/api/getAllBrands", "dest": "index.js" },
+    { "src": "/api/addToCart", "dest": "index.js" },
+    { "src": "/api/fetchCartByUser", "dest": "index.js" },
+    { "src": "/api/deleteFromCart", "dest": "index.js" },
+    { "src": "/api/updateCart", "dest": "index.js" },
+    { "src": "/api/addCategory", "dest": "index.js" },
+    { "src": "/api/getAllCategories", "dest": "index.js" },
+    { "src": "/api/createDeletedOrder", "dest": "index.js" },
+    { "src": "/api/filterDeletedOrders", "dest": "index.js" },
+    { "src": "/api/addDeletedProduct", "dest": "index.js" },
+    { "src": "/api/getAlldeletedProducts", "dest": "index.js" },
+    { "src": "/api/fetchDeletedProductById", "dest": "index.js" },
+    { "src": "/api/deleteDeletedProduct", "dest": "index.js" },
+    { "src": "/api/PaginateAndFilteriesDeletedProducts", "dest": "index.js" },
+    { "src": "/api/createOrder", "dest": "index.js" },
+    { "src": "/api/fetchOrdersByUser", "dest": "index.js" },
+    { "src": "/api/filterOrders", "dest": "index.js" },
+    { "src": "/api/fetchOrderById", "dest": "index.js" },
+    { "src": "/api/deleteOrder", "dest": "index.js" },
+    { "src": "/api/updateOrder", "dest": "index.js" },
+    { "src": "/api/addProduct", "dest": "index.js" },
+    { "src": "/api/addExistingProduct", "dest": "index.js" },
+    { "src": "/api/filteredProducts", "dest": "index.js" },
+    { "src": "/api/getAllProducts", "dest": "index.js" },
+    { "src": "/api/fetchProductById", "dest": "index.js" },
+    { "src": "/api/updateProduct", "dest": "index.js" },
+    { "src": "/api/updateProductStock", "dest": "index.js" },
+    { "src": "/api/deleteProduct", "dest": "index.js" },
+    { "src": "/api/fetchUserById", "dest": "index.js" },
+    { "src": "/api/fetchUserOrdersById", "dest": "index.js" },
+    { "src": "/api/fetchUserPersonalInfoById", "dest": "index.js" },
+    { "src": "/api/updateUser", "dest": "index.js" },
+    { "src": "/create-payment-intent", "dest": "index.js" },
+    { "src": "/(.*)", "dest": "index.js" }
+  ]
 }
